@@ -53,11 +53,23 @@ function Navbar() {
     },
     opened: {
       x: 0,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.3,
+      }
     },
   };
 
-  const listItemVariants = {
-    
+  const listItemVariants =
+  {
+    closed: {
+      x: -10,
+      opacity: 0,
+    },
+    opened: {
+      x: 0,
+      opacity: 1,
+    },
   };
 
   return (
