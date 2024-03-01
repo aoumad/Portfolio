@@ -15,11 +15,19 @@ function TransitionProvider({children}) {
         <motion.div className='h-screen w-screen bg-black fixed rounded-b-[100px] z-40'
                     animate={{height:"0vh"}}
                     exit={{height:"140vh"}}
-                    transition={{duration:2, ease:"easeOut"}}
+                    transition={{duration:0.5, ease:"easeOut"}}
           />
-          <motion.div className='h-screen w-screen bg-red-500 fixed rounded-t-[100px] bottom-0 z-30'
+        <motion.div className='fixed top-0 left-0 right-0 bottom-0 m-auto text-white text-8xl w-fit h-fit cursor-default z-50'
+                    initial={{opacity: 1}}
+                    animate={{opacity: 0}}
+                    // exit={{opacity: 0}}
+                    transition={{duration:0.8, ease:"easeOut"}}
+          >
+            {pathName.substring(1)}
+          </motion.div>
+          <motion.div className='h-screen w-screen bg-black fixed rounded-t-[100px] bottom-0 z-30'
               initial={{height:"140vh"}}
-              animate={{height:"0vh", transition:{delay:2}}}
+              animate={{height:"0vh", transition:{delay:0.5}}}
           />
         <div className="h-24">
           <Navbar/>
