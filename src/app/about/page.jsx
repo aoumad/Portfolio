@@ -11,7 +11,7 @@ function page() {
     transition={{duration: 1}}
     >
       {/* Container */}
-      <div className=''>
+      <div className='h-full overflow-scroll'>
         {/* Text container */}
         <div className='p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-y-32 lg:gap-48 xl:gap-64'>
           {/* Biography Container */}
@@ -111,6 +111,56 @@ function page() {
             {/* Experience List */}
             <div className=''>
               {/* Experience List Item */}
+              <div className='flex justify-between h-48'>
+                {/* Left */}
+                <div className='w-1/3'>
+                  {/* Job title */}
+                  <div className='bg-white p-3 font-semibold rounded-b-lg rounded-s-lg '>Chi haja law3lm</div>
+                  {/* Job Desc */}
+                  <div className='p-3 text-sm italic'>Iwa ach han3awdlik makandir walo had sa3a</div>
+                  {/* Job Date */}
+                  <div className='p-3 text-red-400 text-sm font-semibold'>2020 - 3030</div>
+                  {/* JOb Company */}
+                  <div className='p-1 rounded bg-white text-sm font-semibold w-fit'>Darna</div>
+                </div>
+                {/* Center */}
+                <div className='w-1/6 bg-red-100'>
+                  {/* Line */}
+                  <div className=''>
+                    {/* Line circle */}
+                    <div className=''></div>
+                  </div>
+                </div>
+                {/* Right */}
+                <div className='w-1/3 bg-red-400'></div>
+              </div>
+
+              {/* SECOND ITEM */}
+              <div className=''>
+                {/* Left */}
+                <div className=''></div>
+                {/* Center */}
+                <div className=''>
+                  {/* Line */}
+                  <div className=''>
+                    {/* Line circle */}
+                    <div className=''></div>
+                  </div>
+                </div>
+                {/* Right */}
+                <div className=''>
+                  {/* Job title */}
+                  <div className=''>Chi haja law3lm</div>
+                  {/* Job Desc */}
+                  <div className=''></div>
+                  {/* Job Date */}
+                  <div className=''>2020 - 3030</div>
+                  {/* JOb Company */}
+                  <div className=''>Darna</div>
+                </div>
+              </div>
+
+              {/* Third Item */}
               <div className=''>
                 {/* Left */}
                 <div className=''>
@@ -132,7 +182,7 @@ function page() {
                   </div>
                 </div>
                 {/* Right */}
-                <div className=''></divc>
+                <div className=''></div>
               </div>
             </div>
           </div>
