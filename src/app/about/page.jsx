@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import Brain from '@/components/Brain'
 
 function page() {
   return (
@@ -11,9 +12,9 @@ function page() {
     transition={{duration: 1}}
     >
       {/* Container */}
-      <div className='h-full overflow-scroll'>
+      <div className='h-full overflow-scroll lg:flex'>
         {/* Text container */}
-        <div className='p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-y-32 lg:gap-48 xl:gap-64'>
+        <div className='p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-y-32 lg:gap-48 xl:gap-64 w-2/3 xl:1/2'>
           {/* Biography Container */}
           <div className='flex flex-col gap-12 justify-center'>
             {/* Biography Title */}
@@ -124,71 +125,73 @@ function page() {
                   <div className='p-1 rounded bg-white text-sm font-semibold w-fit'>Darna</div>
                 </div>
                 {/* Center */}
-                <div className='w-1/6 bg-red-100'>
+                <div className='w-1/6'>
                   {/* Line */}
-                  <div className=''>
+                  <div className='w-1 h-full bg-gray-600 rounded relative flex item-center justify-center'>
                     {/* Line circle */}
-                    <div className=''></div>
+                    <div className='absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white'></div>
                   </div>
                 </div>
                 {/* Right */}
-                <div className='w-1/3 bg-red-400'></div>
+                <div className='w-1/3'></div>
               </div>
 
-              {/* SECOND ITEM */}
-              <div className=''>
-                {/* Left */}
-                <div className=''></div>
-                {/* Center */}
-                <div className=''>
-                  {/* Line */}
-                  <div className=''>
-                    {/* Line circle */}
-                    <div className=''></div>
+                {/* SECOND ITEM */}
+              <div className='flex justify-between h-48'>
+                  {/* Left */}
+                  <div className='w-1/3'></div>
+                  {/* Center */}
+                  <div className='w-1/6'>
+                    {/* Line */}
+                    <div className='w-1 h-full bg-gray-600 rounded relative flex item-center justify-center'>
+                      {/* Line circle */}
+                      <div className='absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white'></div>
+                    </div>
+                  </div>
+                  {/* Right */}
+                  <div className='w-1/3'>
+                    {/* Job title */}
+                    <div className='bg-white p-3 font-semibold rounded-b-lg rounded-s-lg '>Chi haja law3lm</div>
+                    {/* Job Desc */}
+                    <div className='p-3 text-sm italic'>Iwa ach han3awdlik makandir walo had sa3a</div>
+                    {/* Job Date */}
+                    <div className='p-3 text-red-400 text-sm font-semibold'>2020 - 3030</div>
+                    {/* JOb Company */}
+                    <div className='p-1 rounded bg-white text-sm font-semibold w-fit'>Darna</div>
                   </div>
                 </div>
-                {/* Right */}
-                <div className=''>
-                  {/* Job title */}
-                  <div className=''>Chi haja law3lm</div>
-                  {/* Job Desc */}
-                  <div className=''></div>
-                  {/* Job Date */}
-                  <div className=''>2020 - 3030</div>
-                  {/* JOb Company */}
-                  <div className=''>Darna</div>
-                </div>
-              </div>
 
               {/* Third Item */}
-              <div className=''>
+              <div className='flex justify-between h-48'>
                 {/* Left */}
-                <div className=''>
+                <div className='w-1/3'>
                   {/* Job title */}
-                  <div className=''>Chi haja law3lm</div>
+                  <div className='bg-white p-3 font-semibold rounded-b-lg rounded-s-lg '>Chi haja law3lm</div>
                   {/* Job Desc */}
-                  <div className=''></div>
+                  <div className='p-3 text-sm italic'>Iwa ach han3awdlik makandir walo had sa3a</div>
                   {/* Job Date */}
-                  <div className=''>2020 - 3030</div>
+                  <div className='p-3 text-red-400 text-sm font-semibold'>2020 - 3030</div>
                   {/* JOb Company */}
-                  <div className=''>Darna</div>
+                  <div className='p-1 rounded bg-white text-sm font-semibold w-fit'>Darna</div>
                 </div>
                 {/* Center */}
-                <div className=''>
+                <div className='w-1/6'>
                   {/* Line */}
-                  <div className=''>
+                  <div className='w-1 h-full bg-gray-600 rounded relative flex item-center justify-center'>
                     {/* Line circle */}
-                    <div className=''></div>
+                    <div className='absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white'></div>
                   </div>
                 </div>
                 {/* Right */}
-                <div className=''></div>
+                <div className='w-1/3'></div>
               </div>
             </div>
           </div>
         </div>
         {/* SVG container */}
-        <div className='hidden'></div>
+        <div className='hidden lg:block sticky top-0 z-30 w-1/3 xl:1/2'>
+          <Brain/>
+        </div>
         </div>
       </div>
     </motion.div>
