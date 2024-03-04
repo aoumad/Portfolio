@@ -1,10 +1,16 @@
 "use client"
 
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion, useInView, useScroll } from 'framer-motion'
 import Brain from '@/components/Brain'
+import { useRef } from 'react'
 
 function page() {
+  const containerRef = useRef();
+
+  const { scrollYProgress } = useScroll({ container: containerRef });
+  const skillRef = useRef();
+  const isSkillRefInView = useInView(skillRef, {margin: "-100px"});
   return (
     <motion.div className="h-full"
     initial={{y: "-200vh"}}
@@ -12,7 +18,7 @@ function page() {
     transition={{duration: 1}}
     >
       {/* Container */}
-      <div className='h-full overflow-scroll lg:flex'>
+      <div className='h-full overflow-scroll lg:flex' ref={containerRef}>
         {/* Text container */}
         <div className='p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-y-32 lg:gap-48 xl:gap-64 w-2/3 xl:1/2'>
           {/* Biography Container */}
@@ -71,9 +77,13 @@ function page() {
             </motion.svg>
           </div>
           {/* Skills Container */}
-          <div className='flex flex-col gap-12 justify-center'>
+          <div className='flex flex-col gap-12 justify-center' ref={skillRef}>
             {/* Skills Title */}
-            <h1 className="font-bold text-2xl">Skills</h1>
+            <motion.h1
+              initial={{x: "-300px"}}
+              animate={isSkillRefInView ? {x: "0"} : {}}
+              transition={{delay: 0.2}}
+              className="font-bold text-2xl">Skills</motion.h1>
             {/* SKills List */}
             <div className='flex gap-4'>
               <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>Javascript</div>
@@ -188,12 +198,12 @@ function page() {
             </div>
           </div>
         </div>
+      </div>
         {/* SVG container */}
         <div className='hidden lg:block sticky top-0 z-30 w-1/3 xl:1/2'>
-          <Brain/>
+          <Brain scrollYProgress={scrollYProgress}/>
         </div>
         </div>
-      </div>
     </motion.div>
   )
 }
