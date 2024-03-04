@@ -9,8 +9,11 @@ function page() {
   const containerRef = useRef();
 
   const { scrollYProgress } = useScroll({ container: containerRef });
+
   const skillRef = useRef();
+  const experienceRef = useRef();
   const isSkillRefInView = useInView(skillRef, {margin: "-100px"});
+  const isExperienceRefInVIew = useInView(experienceRef, {margin: "-100px"});
   return (
     <motion.div className="h-full"
     initial={{y: "-200vh"}}
@@ -116,11 +119,16 @@ function page() {
               ></path>
             </motion.svg>
           {/* Experience Container */}
-          <div className='flex flex-col gap-12 justify-center pb-48'>
+          <div className='flex flex-col gap-12 justify-center pb-48' ref={experienceRef}>
             {/* Experience title */}
-            <h1 className='font-bold text-2xl'>EXPERIENCE</h1>
+            <motion.h1  initial={{x: "-300px"}}
+                        animate={isExperienceRefInVIew ? {x: "0px"}: {}}
+                        transition={{delay: 0.2}}
+                        className='font-bold text-2xl'>EXPERIENCE</motion.h1>
             {/* Experience List */}
-            <div className=''>
+            <motion.div initial={{x: "-300px"}}
+                  animate={isExperienceRefInVIew ? {x: "0px"}: {}}
+                  className=''>
               {/* Experience List Item */}
               <div className='flex justify-between h-48'>
                 {/* Left */}
@@ -195,7 +203,7 @@ function page() {
                 {/* Right */}
                 <div className='w-1/3'></div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
