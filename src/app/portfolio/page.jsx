@@ -111,5 +111,3 @@ function page() {
 }
 
 export default page
-
-// 1h 51min
