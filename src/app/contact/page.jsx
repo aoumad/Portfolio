@@ -1,11 +1,34 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser';
 
 function page() {
   const [success, setSuccess] = useState(false);
   const [failed, setFailed] = useState(false);
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setSuccess(false);
+    setFailed(false);
+
+    emailjs
+      .sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, form.current, {
+        publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY ,
+      })
+      .then(
+        () => {
+          setSuccess(true);
+          form.current.reset();
+        },
+        (error) => {
+          setFailed(true);
+        },
+      );
+  };
 
   const textTest = "Say Hii!";
   return (
@@ -28,7 +51,7 @@ function page() {
           </div>
         </div>
           {/* Form Container */}
-          <form className='h-1/2 lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24'>
+          <form onSubmit={sendEmail} ref={form} className='h-1/2 lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24'>
             <span>Dear Abderazzak Oumad,</span>
             <textarea
                   rows={6}
@@ -53,4 +76,4 @@ function page() {
 
 export default page
 
-// 2 12min 55sec
+// 2 26
