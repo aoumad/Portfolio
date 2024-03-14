@@ -75,5 +75,3 @@ function page() {
 }
 
 export default page
-
-// 2 26
